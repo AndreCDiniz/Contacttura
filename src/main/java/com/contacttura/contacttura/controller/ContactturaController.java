@@ -74,8 +74,9 @@ public class ContactturaController {
 			return repository.findById(id)
 					.map(record -> {
 						repository.deleteById(id);
-						return ResponseEntity.ok().build();
-					}).orElse(ResponseEntity.notFound().build());
+						
+						return ResponseEntity.ok().body("Cliente do ID: " + id + " foi deletado com sucesso!");
+					}).orElse(ResponseEntity.ok().body("Cliente não localizado, tente novamente"));
 		}
 		
 }

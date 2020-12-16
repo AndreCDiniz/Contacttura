@@ -17,21 +17,21 @@ public class ContactturaApplication {
 		SpringApplication.run(ContactturaApplication.class, args);
 	}
 	
-	@Bean
-	CommandLineRunner init(ContactturaRepository repository){
-		return args -> {
-			repository.deleteAll();
-			LongStream.range(1, 10)
-			.mapToObj(i -> {
-				Contacttura c = new Contacttura();
-				c.setName("Contactura User" + i);
-				c.setEmail("contactura" + i + "@gmail.com");
-				c.setPhone("(081) 9" + i + i + i + i + "-" + i +i +i +i);
-				return c;
-			})
-			.map(m -> repository.save(m))
-			.forEach(System.out::println);
-		};
-	}
+//	@Bean
+//	CommandLineRunner init(ContactturaRepository repository){
+//		return args -> {
+//			repository.deleteAll();
+//			LongStream.range(1, 10)
+//			.mapToObj(i -> {
+//				Contacttura c = new Contacttura();
+//				c.setName("Contactura User" + i);
+//				c.setEmail("contactura" + i + "@gmail.com");
+//				c.setPhone("(081) 9" + i + i + i + i + "-" + i +i +i +i);
+//				return c;
+//			})
+//			.map(m -> repository.save(m))
+//			.forEach(System.out::println);
+//		};
+//	}
 	
 }	
